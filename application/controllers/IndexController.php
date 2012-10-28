@@ -3,14 +3,33 @@
 class IndexController extends Zend_Controller_Action
 {
 
+	public $todoModel;
+
     public function init()
     {
-        /* Initialize action controller here */
+		$this->todoModel = new Application_Model_Todo;
     }
 
     public function indexAction()
     {
-        // action body
+		$todoModel = $this->todoModel;
+
+		$markComplete = filter_input(INPUT_POST, 'mark_complete');
+		if ($markComplete) {
+			$todoModel->markComplete($markComplete);
+		}
+
+		$insertNew = !empty($_POST['insert_new']);
+		if ($insertNew) {
+			$todoModel->createNew($_POST['name']);
+		}
+
+
+		$options = array ();
+		$options['order_complete'] = true;
+		$options['template'] = true;
+		$todos = $todoModel->getAll($options);
+		$this->view->todos = $todos;
     }
 
 
