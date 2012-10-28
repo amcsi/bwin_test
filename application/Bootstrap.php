@@ -26,6 +26,25 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		return $view;
 	}
 
+	protected function _initLayout() {
+		Zend_Layout::startMvc();
+		return;
+		$layout = new Zend_Layout();
+ 
+		// Set a layout script path:
+		$layout->setLayoutPath('/path/to/layouts');
+		 
+		// set some variables:
+		$layout->content = $content;
+		$layout->nav     = $nav;
+		 
+		// choose a different layout script:
+		$layout->setLayout('foo');
+		 
+		// render final layout
+		echo $layout->render();
+	}
+
 	protected function _initAMysql() {
 		$this->bootstrap('autoload');
 		$this->bootstrap('config');
