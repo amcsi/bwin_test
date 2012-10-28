@@ -1,5 +1,7 @@
-1. Copy application/configs/application.dist.ini to application/configs/application.dist.ini
+1. Make sure the Zend Framework library is installed or has its library files in the library/ directory. This project does not include the Zend Framework library for it takes up a too much space. You can find the library files in the library folder of the zip file for the Zend Framwork 1.12 minimal package which can be found here: http://www.zend.com/en/download/582
 
-2. Make sure the database settings in application/configs/application.dist.ini match a valid mysql server, user, password and database.
+2. Copy application/configs/application.dist.ini to application/configs/application.dist.ini
 
-3. Go to http://projectdir/public/install to install the necessary database tables.
+3. Make sure the database settings in application/configs/application.dist.ini match a valid mysql server, user, password and database.
+
+4. Go to http://projectdir/public/install to install the necessary database tables.
