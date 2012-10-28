@@ -14,6 +14,16 @@ class IndexController extends Zend_Controller_Action
     {
 		$todoModel = $this->todoModel;
 
+		$options = array ();
+		$options['order_complete'] = true;
+		$options['template'] = true;
+		$todos = $todoModel->getAll($options);
+		$this->view->todos = $todos;
+    }
+
+	public function editAction() {
+		$todoModel = $this->todoModel;
+
 		$markComplete = filter_input(INPUT_POST, 'mark_complete');
 		if ($markComplete) {
 			$todoModel->markComplete($markComplete);
@@ -24,14 +34,7 @@ class IndexController extends Zend_Controller_Action
 			$todoModel->createNew($_POST['name']);
 		}
 
-
-		$options = array ();
-		$options['order_complete'] = true;
-		$options['template'] = true;
-		$todos = $todoModel->getAll($options);
-		$this->view->todos = $todos;
-    }
-
-
+		$this->_redirect('index');
+	}
 }
 
