@@ -1,0 +1,5 @@
+1. Copy application/configs/application.dist.ini to application/configs/application.dist.ini
+
+2. Make sure the database settings in application/configs/application.dist.ini match a valid mysql server, user, password and database.
+
+3. Go to http://projectdir/public/install to install the necessary database tables.
