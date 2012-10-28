@@ -1,0 +1,14 @@
+<div>
+Installation was
+<?php if ($this->installSuccess): ?>
+successful.
+<div>
+<a href="<?php echo $this->url(array (
+	'controller' => 'index',
+	'action' => 'index'
+)) ?>">Go to the index page</a>
+</div>
+<?php else: ?>
+unsuccessful.
+<?php endif ?>
+</div>

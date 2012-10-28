@@ -12,11 +12,16 @@
           <actionMethod actionName="index"/>
         </controllerFile>
         <controllerFile controllerName="Error"/>
+        <controllerFile controllerName="Install">
+          <actionMethod actionName="index"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory enabled="false"/>
       <layoutsDirectory enabled="false"/>
       <modelsDirectory>
         <modelFile modelName="Todo"/>
+        <modelFile modelName="Install"/>
+        <modelFile modelName="Abstract"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <viewsDirectory>
@@ -26,6 +31,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Error">
             <viewScriptFile forActionName="error"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Install">
+            <viewScriptFile forActionName="index"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
@@ -57,6 +65,9 @@
       <testPHPUnitConfigFile/>
       <testApplicationDirectory>
         <testApplicationBootstrapFile/>
+        <testApplicationControllerDirectory>
+          <testApplicationControllerFile/>
+        </testApplicationControllerDirectory>
       </testApplicationDirectory>
       <testLibraryDirectory>
         <testLibraryBootstrapFile/>

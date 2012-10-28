@@ -1,6 +1,6 @@
 <?php
 
-class Model_Todo
+class Model_Todo extends Model_Abstract
 {
 
 
